@@ -1,0 +1,47 @@
+img {
+    width : 300px;
+}
+section{
+    width:fit-content;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.fill{
+    width: 300px;
+    height: fit-content;
+}
+
+#naver_img{
+    width:fit-content;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+#login_button{
+    width:308px;
+    background-color: #2DB400;
+    border : 1px solid black;
+    color : white;
+}
+
+#login_settings{
+    width:308px;
+    margin-left:auto;
+    margin-right: auto;
+    height: fit-content;
+}
+
+#keep_login{
+    width : 40%;
+}
+
+.check{
+    width:4%;
+}
+
+#IP_security{
+    width :40%;
+    display: inline-block;
+    text-align:end;
+}
