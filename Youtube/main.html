@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube</title>
+</head>
+<body>
+    <header>
+        <div id="home_start_menu">
+            <button id="nav_menu_button" type="button" onclick="full_menu()">
+                <svg class="header_button_img" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg> <!-- 메뉴(세줄) 이미지-->
+            </button>   
+            <a href="main.html">
+                <img id="ytb_logo_img" src="images/ytb_logo.png">
+            </a>
+        </div>
+
+        <div id="header_centner_menu">
+            <div id="search_space">
+                <input id="search_input" type="text" value="검색">
+                <button id ="search_keyboard"type="button">
+                    <svg class="header_button_img" viewBox="0 0 16 16">
+                        <path d="M0 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6zm13 .25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM2.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 8.75v-.5A.25.25 0 0 0 2.75 8h-.5zM4 8.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 5 8.75v-.5A.25.25 0 0 0 4.75 8h-.5a.25.25 0 0 0-.25.25zM6.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 7 8.75v-.5A.25.25 0 0 0 6.75 8h-.5zM8 8.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 9 8.75v-.5A.25.25 0 0 0 8.75 8h-.5a.25.25 0 0 0-.25.25zM13.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zm-3-2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h1.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-1.5zm.75 2.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM11.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zM9 6.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5A.25.25 0 0 0 9.75 6h-.5a.25.25 0 0 0-.25.25zM7.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 8 6.75v-.5A.25.25 0 0 0 7.75 6h-.5zM5 6.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 6 6.75v-.5A.25.25 0 0 0 5.75 6h-.5a.25.25 0 0 0-.25.25zM2.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h1.5A.25.25 0 0 0 4 6.75v-.5A.25.25 0 0 0 3.75 6h-1.5zM2 10.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM4.25 10a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h5.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-5.5z"/>
+                    </svg> <!-- 자판 입력기  -->
+                </button>
+            </div>
+            <button id="search_glasses" class="search_things">
+                <svg class="header_button_img" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg> <!-- 검색 이미지 -->
+            </button>
+            <button id="search_mic" class="search_things" type="button">
+                <svg class="header_button_img" viewBox="0 0 16 16">
+                    <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0V3z"/>
+                    <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
+                </svg> <!-- Mic 이미지 -->
+            </button>
+        </div>
+
+        <div id="header_end_menu">
+            <button id="search_glasses_small_screen" class="ytb_else" type="submit">
+                <svg class="header_button_img" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg> <!-- 검색 이미지  -->
+            </button>
+            <button id="ytb_upload" class="ytb_else" type="button">
+                <svg class="header_button_img" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5zm11.5 5.175 3.5 1.556V4.269l-3.5 1.556v4.35zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H2z"/>
+                  </svg> <!-- 카메라 업로드 이미지 -->
+            </button> 
+            <button id="ytb_apps" class="ytb_else"type="button">
+                <svg class="header_button_img" viewBox="0 0 16 16">
+                    <path d="M4 2v2H2V2h2zm1 12v-2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V7a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm5 10v-2a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V7a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V2a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zM9 2v2H7V2h2zm5 0v2h-2V2h2zM4 7v2H2V7h2zm5 0v2H7V7h2zm5 0h-2v2h2V7zM4 12v2H2v-2h2zm5 0v2H7v-2h2zm5 0v2h-2v-2h2zM12 1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zm-1 6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zm1 4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-2z"/>
+                  </svg> <!-- 사각형 9개 (Youtube app) 이미지-->
+            </button> 
+            <button id="ytb_alarm" class="ytb_else" type="button">
+                <svg class="header_button_img" viewBox="0 0 16 16">
+                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+                </svg> <!-- 알림설정 이미지-->
+            </button>
+            <button id="account_button" type="button"> 
+                <img id="user" src="images/user.png" >
+            </button>
+        </div>
+    </header>
+
+    <nav id="nav_content">
+        <div class="nav_menu" title="홈">
+            <button type="button" class="nav_button">
+                <svg class="nav_button_img" viewBox="0 0 16 16">
+                    <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+                </svg> <!-- 홈 이미지 -->
+            </button>
+            <div>
+                <p class="nav_button_text">홈</p>
+            </div>
+        </div>
+        <div class="nav_menu" title="탐색">
+            <button type="button" class="nav_button">
+                <svg class="nav_button_img" viewBox="0 0 16 16">
+                    <path d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016zm6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                    <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z"/>
+                </svg> <!-- 탐색 이미지 -->
+            </button>
+            <div>
+                <p class="nav_button_text">탐색</p>
+            </div>
+        </div>
+        <div class="nav_menu" title="Shorts">
+            <button type="button" class="nav_button" >
+                <svg class="nav_button_img" viewBox="0 0 24 24" >
+                    <path d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33c-.77-.32-1.2-.5-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86l-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08v-1.21l-.69-.28-1.11-.46c-.99-.41-1.65-1.35-1.7-2.41-.05-1.06.52-2.06 1.46-2.56l8.5-4.5c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.14 3.72L15.5 9.26v1.21l1.8.74c.99.41 1.65 1.35 1.7 2.41.05 1.06-.52 2.06-1.46 2.56z" ></path>
+                </svg> <!-- Shorts 이미지 -->
+            </button>
+            <div>
+                <p class="nav_button_text">Shorts</p>
+            </div>
+        </div>
+        <div class="nav_menu" title="구독">
+            <button type="button" class="nav_button">
+                <svg class="nav_button_img" viewBox="0 0 24 24" >
+                    <path d="M10,18v-6l5,3L10,18z M17,3H7v1h10V3z M20,6H4v1h16V6z M22,9H2v12h20V9z M3,10h18v10H3V10z"></path>
+                </svg> <!-- 구독 이미지 -->
+            </button>
+            <div>
+                <p class="nav_button_text">구독</p>
+            </div>
+        </div>
+        <div class="nav_menu" title="Originals">
+            <button type="button" class="nav_button" >
+                <svg class="nav_button_img" viewBox="0 0 612 612" >
+                    <path d="M489.6,81.6H122.4C54.917,81.6,0,136.516,0,204v204c0,67.482,54.917,122.4,122.4,122.4h367.2     c67.483,0,122.4-54.918,122.4-122.4V204C612,136.516,557.083,81.6,489.6,81.6z M584.8,408c0,52.496-42.704,95.199-95.2,95.199     H122.4c-52.496,0-95.2-42.703-95.2-95.199V204c0-52.496,42.704-95.2,95.2-95.2h367.2c52.496,0,95.2,42.704,95.2,95.2V408z      M217.6,421.068l199.308-115.055L217.6,190.93V421.068z M244.8,238.041l117.708,67.973L244.8,373.959V238.041z"/>              
+                </svg> <!-- Original 이미지 -->
+            </button>
+            <div>
+                <p class="nav_button_text">Originals</p>
+            </div>
+        </div>
+        <div class="nav_menu" title="Youtube Music">
+            <button type="button" class="nav_button" >
+                <svg class="nav_button_img" viewBox="0 0 24 24">
+                    <path d="M9.75365,8.5649c0.15676,-0.08875 0.34915,-0.08633 0.50355,0.00635l5,3.00005c0.1507,0.0903 0.2428,0.2531 0.2428,0.4287c0,0.1756 -0.0921,0.3384 -0.2428,0.4287l-5,3c-0.1544,0.0927 -0.34679,0.0952 -0.50355,0.0064c-0.15675,-0.0888 -0.25365,-0.255 -0.25365,-0.4351v-6c0,-0.18014 0.0969,-0.34635 0.25365,-0.4351Zm0.74635,5.552l3.5282,-2.1169l-3.5282,-2.11691v4.23381Z"/><path d="M4.5,12c0,-4.14214 3.35786,-7.5 7.5,-7.5c4.1421,0 7.5,3.35786 7.5,7.5c0,4.1421 -3.3579,7.5 -7.5,7.5c-4.14214,0 -7.5,-3.3579 -7.5,-7.5Zm7.5,-6.5c-3.58985,0 -6.5,2.91015 -6.5,6.5c0,3.5899 2.91015,6.5 6.5,6.5c3.5899,0 6.5,-2.9101 6.5,-6.5c0,-3.58985 -2.9101,-6.5 -6.5,-6.5Z"/><path d="M12,1.5c-5.79899,0 -10.5,4.70101 -10.5,10.5c0,5.799 4.70101,10.5 10.5,10.5c5.799,0 10.5,-4.701 10.5,-10.5c0,-5.79899 -4.701,-10.5 -10.5,-10.5Zm-9.5,10.5c0,-5.24671 4.25329,-9.5 9.5,-9.5c5.2467,0 9.5,4.25329 9.5,9.5c0,5.2467 -4.2533,9.5 -9.5,9.5c-5.24671,0 -9.5,-4.2533 -9.5,-9.5Z"/>
+                </svg> <!-- Youtube Music 이미지 -->
+            </button>
+            <div>
+                <p class="nav_button_text">Youtube Music</p>
+            </div>
+        </div>
+        <div class="nav_menu" title="보관함">
+            <button type="button" class="nav_button">
+                <svg class="nav_button_img" viewBox="0 0 16 16">
+                    <path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9zM2.5 3a.5.5 0 0 0-.5.5V6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5zM14 7H2v5.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V7z"/>
+                  </svg> <!-- 보관함 이미지 -->
+            </button>
+            <div>
+                <p class="nav_button_text">보관함</p>
+            </div>
+        </div>
+        <div class="nav_menu" title="오프라인 저장 동영상">
+            <button type="button" class="nav_button">
+                <svg class="nav_button_img" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                  </svg> <!-- 오프라인저장 이미지 -->
+            </button>
+            <div>
+                <p class="nav_button_text">오프라인 저장 동영상</p>
+            </div>
+        </div>
+    </nav>
+
+    <nav id="nav_full">
+        <div id="nav_full_background" onclick="full_menu()"></div>
+        <div class="nav_full_list">
+            <div id="nav_full_home_start_menu">
+                <button id="nav_menu_button" type="button" onclick="full_menu()">
+                    <svg class="header_button_img" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                    </svg> <!-- 메뉴(세줄) 이미지-->
+                </button>   
+                <a href="main.html">
+                    <img id="ytb_logo_img" src="images/ytb_logo.png">
+                </a>
+            </div> 
+    
+            <div id="nav_full_content">
+                <div class="nav_full_menu" title="홈">
+                    <button type="button" class="nav_full_button">
+                        <svg class="nav_button_img" viewBox="0 0 16 16">
+                            <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+                        </svg> <!-- 홈 이미지 -->
+                    </button>
+                    <div>
+                        <p class="nav_full_button_text">홈</p>
+                    </div>
+                </div>
+                <div class="nav_full_menu" title="탐색">
+                    <button type="button" class="nav_full_button">
+                        <svg class="nav_button_img" viewBox="0 0 16 16">
+                            <path d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016zm6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                            <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z"/>
+                        </svg> <!-- 탐색 이미지 -->
+                    </button>
+                    <div>
+                        <p class="nav_full_button_text">탐색</p>
+                    </div>
+                </div>
+                <div class="nav_full_menu" title="Shorts">
+                    <button type="button" class="nav_full_button" >
+                        <svg class="nav_button_img" viewBox="0 0 24 24" >
+                            <path d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33c-.77-.32-1.2-.5-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86l-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08v-1.21l-.69-.28-1.11-.46c-.99-.41-1.65-1.35-1.7-2.41-.05-1.06.52-2.06 1.46-2.56l8.5-4.5c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.14 3.72L15.5 9.26v1.21l1.8.74c.99.41 1.65 1.35 1.7 2.41.05 1.06-.52 2.06-1.46 2.56z" ></path>
+                        </svg> <!-- Shorts 이미지 -->
+                    </button>
+                    <div >
+                        <p class="nav_full_button_text">Shorts</p>
+                    </div>
+                </div>
+                <div class="nav_full_menu" title="구독">
+                    <button type="button" class="nav_full_button">
+                        <svg class="nav_button_img" viewBox="0 0 24 24" >
+                            <path d="M10,18v-6l5,3L10,18z M17,3H7v1h10V3z M20,6H4v1h16V6z M22,9H2v12h20V9z M3,10h18v10H3V10z"></path>
+                        </svg> <!-- 구독 이미지 -->
+                    </button>
+                    <div>
+                        <p class="nav_full_button_text">구독</p>
+                    </div>
+                </div>
+                <div class="nav_full_menu" title="Originals">
+                    <button type="button" class="nav_full_button" >
+                        <svg class="nav_button_img" viewBox="0 0 612 612" >
+                            <path d="M489.6,81.6H122.4C54.917,81.6,0,136.516,0,204v204c0,67.482,54.917,122.4,122.4,122.4h367.2     c67.483,0,122.4-54.918,122.4-122.4V204C612,136.516,557.083,81.6,489.6,81.6z M584.8,408c0,52.496-42.704,95.199-95.2,95.199     H122.4c-52.496,0-95.2-42.703-95.2-95.199V204c0-52.496,42.704-95.2,95.2-95.2h367.2c52.496,0,95.2,42.704,95.2,95.2V408z      M217.6,421.068l199.308-115.055L217.6,190.93V421.068z M244.8,238.041l117.708,67.973L244.8,373.959V238.041z"/>              
+                        </svg> <!-- Original 이미지 -->
+                    </button>
+                    <div>
+                        <p class="nav_full_button_text">Original</p>
+                    </div>
+                </div>
+                <div class="nav_full_menu" title="Youtube Music">
+                    <button type="button" class="nav_full_button" >
+                        <svg class="nav_button_img" viewBox="0 0 24 24">
+                            <path d="M9.75365,8.5649c0.15676,-0.08875 0.34915,-0.08633 0.50355,0.00635l5,3.00005c0.1507,0.0903 0.2428,0.2531 0.2428,0.4287c0,0.1756 -0.0921,0.3384 -0.2428,0.4287l-5,3c-0.1544,0.0927 -0.34679,0.0952 -0.50355,0.0064c-0.15675,-0.0888 -0.25365,-0.255 -0.25365,-0.4351v-6c0,-0.18014 0.0969,-0.34635 0.25365,-0.4351Zm0.74635,5.552l3.5282,-2.1169l-3.5282,-2.11691v4.23381Z"/><path d="M4.5,12c0,-4.14214 3.35786,-7.5 7.5,-7.5c4.1421,0 7.5,3.35786 7.5,7.5c0,4.1421 -3.3579,7.5 -7.5,7.5c-4.14214,0 -7.5,-3.3579 -7.5,-7.5Zm7.5,-6.5c-3.58985,0 -6.5,2.91015 -6.5,6.5c0,3.5899 2.91015,6.5 6.5,6.5c3.5899,0 6.5,-2.9101 6.5,-6.5c0,-3.58985 -2.9101,-6.5 -6.5,-6.5Z"/><path d="M12,1.5c-5.79899,0 -10.5,4.70101 -10.5,10.5c0,5.799 4.70101,10.5 10.5,10.5c5.799,0 10.5,-4.701 10.5,-10.5c0,-5.79899 -4.701,-10.5 -10.5,-10.5Zm-9.5,10.5c0,-5.24671 4.25329,-9.5 9.5,-9.5c5.2467,0 9.5,4.25329 9.5,9.5c0,5.2467 -4.2533,9.5 -9.5,9.5c-5.24671,0 -9.5,-4.2533 -9.5,-9.5Z"/>
+                        </svg> <!-- Youtube Music 이미지 -->
+                    </button>
+                    <div>
+                        <p class="nav_full_button_text">Youtube Music</p>
+                    </div>
+                </div>
+                <hr class="nav_full_border">
+                <div class="nav_full_menu" title="보관함">
+                    <button type="button" class="nav_full_button">
+                        <svg class="nav_button_img" viewBox="0 0 16 16">
+                            <path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9zM2.5 3a.5.5 0 0 0-.5.5V6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5zM14 7H2v5.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V7z"/>
+                        </svg> <!-- 보관함 이미지 -->
+                    </button>
+                    <div>
+                        <p class="nav_full_button_text">보관함</p>
+                    </div>
+                </div>
+                <div class="nav_full_menu" title="시청기록">
+                    <button type="button" class="nav_full_button">
+                        <svg class="nav_button_img" viewBox="0 0 16 16">
+                            <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"/>
+                            <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"/>
+                            <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
+                        </svg>
+                    </button>
+                    <div>
+                        <p class="nav_full_button_text">시청 기록</p>
+                    </div>
+                </div>
+                <div class="nav_full_menu" title="내 동영상">
+                    <button type="button" class="nav_full_button">
+                        <svg class ="nav_button_img" viewBox="0 0 16 16">
+                            <path d="M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                          </svg>
+                    </button>
+                    <div>
+                        <p class="nav_full_button_text">내 동영상</p>
+                    </div>
+                </div>
+                <div class="nav_full_menu" title="나중에 볼 동영상">
+                    <button type="button" class="nav_full_button">
+                        <svg class="nav_button_img" viewBox="0 0 16 16">
+                            <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                          </svg>
+                    </button>
+                    <div>
+                        <p class="nav_full_button_text">나중에 볼 동영상</p>
+                    </div>
+                </div>
+                <div class="nav_full_menu" title="오프라인 저장 동영상">
+                    <button type="button" class="nav_full_button">
+                        <svg class="nav_button_img" viewBox="0 0 16 16">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                          </svg> <!-- 오프라인저장 이미지 -->
+                    </button>
+                    <div>
+                        <p class="nav_full_button_text">오프라인 저장 동영상</p>
+                    </div>
+                </div>
+                <div class="nav_full_menu" title="좋아요 표시한 동영상">
+                    <button type="button" class="nav_full_button">
+                        <svg class="nav_button_img" viewBox="0 0 16 16">
+                            <path d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"/>
+                          </svg>
+                    </button>
+                    <div>
+                        <p class="nav_full_button_text">좋아요 표시한 동영상</p>
+                    </div>
+                </div>
+                <hr class="nav_full_border">
+
+                <div class="nav_full_menu_name">
+                    <p class="nav_full_menu_name_text">구독</p>
+                </div>
+                <div class="nav_full_menu" title="메이플스토리_티스토리">
+                    <button type="button" class="nav_full_button">
+                        <img class="nav_full_profile_img" src="images/tistory_profile.png">
+                    </button>
+                    <div>
+                        <p class="nav_full_button_text">메이플스토리_티스토리</p>
+                    </div>
+                </div>
+                <div class="nav_full_menu" title="메이플스토리_네이버">
+                    <button type="button" class="nav_full_button">
+                        <img class="nav_full_profile_img" src="images/naver_profile.png">
+                    </button>
+                    <div>
+                        <p class="nav_full_button_text">메이플스토리_네이버</p>
+                    </div>
+                </div>
+                <div class="nav_full_menu" title="메이플스토리_구글">
+                    <button type="button" class="nav_full_button">
+                        <img class="nav_full_profile_img" src="images/google_profile.png">
+                    </button>
+                    <div>
+                        <p class="nav_full_button_text">메이플스토리_구글</p>
+                    </div>
+                </div>
+                <div class="nav_full_menu" title="메이플스토리_인하대">
+                    <button type="button" class="nav_full_button">
+                        <img class="nav_full_profile_img" src="images/inha_profile.png">
+                    </button>
+                    <div>
+                        <p class="nav_full_button_text">메이플스토리_인하대</p>
+                    </div>
+                </div>
+                <div class="nav_full_menu" title="메이플스토리_깃허브">
+                    <button type="button" class="nav_full_button">
+                        <img class="nav_full_profile_img" src="images/github_profile.png">
+                    </button>
+                    <div>
+                        <p class="nav_full_button_text">메이플스토리_깃허브</p>
+                    </div>
+                </div>
+                <div class="nav_full_menu" title="메이플스토리_파파고">
+                    <button type="button" class="nav_full_button">
+                        <img class="nav_full_profile_img" src="images/papago_profile.png">
+                    </button>
+                    <div>
+                        <p class="nav_full_button_text">메이플스토리_파파고</p>
+                    </div>
+                </div>
+
+                <hr class="nav_full_border">
+                <div class="nav_full_menu_name">
+                    <p class="nav_full_menu_name_text">Youtube 더보기</p>
+                </div>
+
+                <div class="nav_full_menu" title="영화">
+                    <button type="button" class="nav_full_button">
+                        <svg class="nav_button_img" viewBox="0 0 16 16">
+                            <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z"/>
+                        </svg>
+                    </button>
+                    <div>
+                        <p class="nav_full_button_text">영화</p>
+                    </div>
+                </div>
+                <div class="nav_full_menu" title="게임">
+                    <button type="button" class="nav_full_button">
+                        <svg class="nav_button_img" viewBox="0 0 16 16">
+                            <path d="M11.5 6.027a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm2.5-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm-6.5-3h1v1h1v1h-1v1h-1v-1h-1v-1h1v-1z"/>
+                            <path d="M3.051 3.26a.5.5 0 0 1 .354-.613l1.932-.518a.5.5 0 0 1 .62.39c.655-.079 1.35-.117 2.043-.117.72 0 1.443.041 2.12.126a.5.5 0 0 1 .622-.399l1.932.518a.5.5 0 0 1 .306.729c.14.09.266.19.373.297.408.408.78 1.05 1.095 1.772.32.733.599 1.591.805 2.466.206.875.34 1.78.364 2.606.024.816-.059 1.602-.328 2.21a1.42 1.42 0 0 1-1.445.83c-.636-.067-1.115-.394-1.513-.773-.245-.232-.496-.526-.739-.808-.126-.148-.25-.292-.368-.423-.728-.804-1.597-1.527-3.224-1.527-1.627 0-2.496.723-3.224 1.527-.119.131-.242.275-.368.423-.243.282-.494.575-.739.808-.398.38-.877.706-1.513.773a1.42 1.42 0 0 1-1.445-.83c-.27-.608-.352-1.395-.329-2.21.024-.826.16-1.73.365-2.606.206-.875.486-1.733.805-2.466.315-.722.687-1.364 1.094-1.772a2.34 2.34 0 0 1 .433-.335.504.504 0 0 1-.028-.079zm2.036.412c-.877.185-1.469.443-1.733.708-.276.276-.587.783-.885 1.465a13.748 13.748 0 0 0-.748 2.295 12.351 12.351 0 0 0-.339 2.406c-.022.755.062 1.368.243 1.776a.42.42 0 0 0 .426.24c.327-.034.61-.199.929-.502.212-.202.4-.423.615-.674.133-.156.276-.323.44-.504C4.861 9.969 5.978 9.027 8 9.027s3.139.942 3.965 1.855c.164.181.307.348.44.504.214.251.403.472.615.674.318.303.601.468.929.503a.42.42 0 0 0 .426-.241c.18-.408.265-1.02.243-1.776a12.354 12.354 0 0 0-.339-2.406 13.753 13.753 0 0 0-.748-2.295c-.298-.682-.61-1.19-.885-1.465-.264-.265-.856-.523-1.733-.708-.85-.179-1.877-.27-2.913-.27-1.036 0-2.063.091-2.913.27z"/>
+                          </svg>
+                    </button>
+                    <div>
+                        <p class="nav_full_button_text">게임</p>
+                    </div>
+                </div>
+                <div class="nav_full_menu" title="실시간">
+                    <button type="button" class="nav_full_button">
+                        <svg class="nav_button_img" viewBox="0 0 16 16">
+                            <path d="M3.05 3.05a7 7 0 0 0 0 9.9.5.5 0 0 1-.707.707 8 8 0 0 1 0-11.314.5.5 0 0 1 .707.707zm2.122 2.122a4 4 0 0 0 0 5.656.5.5 0 1 1-.708.708 5 5 0 0 1 0-7.072.5.5 0 0 1 .708.708zm5.656-.708a.5.5 0 0 1 .708 0 5 5 0 0 1 0 7.072.5.5 0 1 1-.708-.708 4 4 0 0 0 0-5.656.5.5 0 0 1 0-.708zm2.122-2.12a.5.5 0 0 1 .707 0 8 8 0 0 1 0 11.313.5.5 0 0 1-.707-.707 7 7 0 0 0 0-9.9.5.5 0 0 1 0-.707zM10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+                          </svg>
+                    </button>
+                    <div>
+                        <p class="nav_full_button_text">실시간</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+       
+    </nav>
+    <main>
+        <div id="video_list">
+            <article class="video" onclick="location.href='video.html'">
+                <div class="video_img_space" href="video.html">
+                    <img class="video_img" src="images/henesys.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/tistory_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 헤네시스 브금이 어쩔티비 저쩔티비 합니다요를레리히 요를레이히히히 레히레히</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_티스토리</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 70만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">1개월 전</span>
+                        </div>
+                    </div>
+                        <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/ellinia.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/naver_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 엘리니아 브금이 어쩔티비 저쩔티비</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_네이버</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 53억회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">6년 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/kerning.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/google_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 커닝시티 브금이 저쩔티비</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_구글</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 20만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">3일 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                         </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/ludibrium.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/inha_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 루디브리엄</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_인하대</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 40만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">3개월 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/elnath.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/github_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 엘나스</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_깃허브</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 350만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">8개월 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/timetemple.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/papago_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 시간의신전</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_파파고</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 250만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">2년 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div class="video_img_space" href="video.html">
+                    <img class="video_img" src="images/henesys.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/tistory_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 헤네시스 브금이 어쩔티비 저쩔티비 합니다요를레리히 요를레이히히히 레히레히</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_티스토리</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 70만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">1개월 전</span>
+                        </div>
+                    </div>
+                        <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/ellinia.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/naver_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 엘리니아 브금이 어쩔티비 저쩔티비</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_네이버</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 53억회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">6년 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/kerning.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/google_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 커닝시티 브금이 저쩔티비</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_구글</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 20만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">3일 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                         </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/ludibrium.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/inha_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 루디브리엄</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_인하대</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 40만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">3개월 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/elnath.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/github_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 엘나스</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_깃허브</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 350만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">8개월 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/timetemple.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/papago_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 시간의신전</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_파파고</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 250만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">2년 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div class="video_img_space" href="video.html">
+                    <img class="video_img" src="images/henesys.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/tistory_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 헤네시스 브금이 어쩔티비 저쩔티비 합니다요를레리히 요를레이히히히 레히레히</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_티스토리</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 70만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">1개월 전</span>
+                        </div>
+                    </div>
+                        <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/ellinia.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/naver_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 엘리니아 브금이 어쩔티비 저쩔티비</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_네이버</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 53억회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">6년 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/kerning.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/google_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 커닝시티 브금이 저쩔티비</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_구글</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 20만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">3일 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                         </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/ludibrium.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/inha_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 루디브리엄</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_인하대</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 40만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">3개월 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/elnath.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/github_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 엘나스</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_깃허브</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 350만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">8개월 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/timetemple.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/papago_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 시간의신전</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_파파고</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 250만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">2년 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div class="video_img_space" href="video.html">
+                    <img class="video_img" src="images/henesys.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/tistory_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 헤네시스 브금이 어쩔티비 저쩔티비 합니다요를레리히 요를레이히히히 레히레히</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_티스토리</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 70만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">1개월 전</span>
+                        </div>
+                    </div>
+                        <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/ellinia.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/naver_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 엘리니아 브금이 어쩔티비 저쩔티비</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_네이버</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 53억회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">6년 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/kerning.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/google_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 커닝시티 브금이 저쩔티비</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_구글</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 20만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">3일 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                         </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/ludibrium.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/inha_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 루디브리엄</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_인하대</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 40만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">3개월 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/elnath.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/github_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 엘나스</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_깃허브</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 350만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">8개월 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/timetemple.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/papago_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 시간의신전</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_파파고</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 250만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">2년 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div class="video_img_space" href="video.html">
+                    <img class="video_img" src="images/henesys.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/tistory_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 헤네시스 브금이 어쩔티비 저쩔티비 합니다요를레리히 요를레이히히히 레히레히</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_티스토리</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 70만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">1개월 전</span>
+                        </div>
+                    </div>
+                        <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/ellinia.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/naver_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 엘리니아 브금이 어쩔티비 저쩔티비</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_네이버</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 53억회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">6년 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/kerning.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/google_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 커닝시티 브금이 저쩔티비</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_구글</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 20만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">3일 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                         </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/ludibrium.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/inha_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 루디브리엄</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_인하대</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 40만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">3개월 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/elnath.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/github_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 엘나스</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_깃허브</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 350만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">8개월 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            <article class="video" onclick="location.href='video.html'">
+                <div href="video.html" class="video_img_space">
+                    <img class="video_img" src="images/timetemple.jpg">
+                </div>
+                <div class="video_description_space">
+                    <a href="channel.html" class="profile_img_space">
+                        <img class="profile_img" src="images/papago_profile.png">
+                    </a>
+                    <div class="description">
+                        <a href="video.html" class="video_title">메이플스토리 시간의신전</a>
+                        <a href="channel.html" class="Channel_name">메이플스토리_파파고</a>
+                        <div class="watched_and_date">
+                            <span class="watched_count">조회수 250만회</span>
+                            <span class="seperate">·</span>
+                            <span class="update_date">2년 전</span>
+                        </div>
+                    </div>
+                    <div class="video_description_end">
+                        <svg class="video_option" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+    </main>
+
+    <script src="nav_menu.js"></script>
+</body>
+</html>
