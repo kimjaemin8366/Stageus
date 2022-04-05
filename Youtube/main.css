@@ -168,8 +168,7 @@ header {
 /* 메뉴 (펼쳤을 때)*/
 
 #nav_full{
-    display:none;
-    background-color: #03030386;
+    visibility: hidden;
     width: 100%;
     height : 100%;
 
@@ -183,12 +182,14 @@ header {
     height:100%;
 }
 
-.nav_full_list{
+#nav_full_list{
     position : fixed;
     background-color: #FFFFFF;
     width:256px;
     height: 100%;
     z-index : 600;
+    left: -300px;
+    transition: .25s;
 }
 
 #nav_full_home_start_menu{
@@ -201,6 +202,21 @@ header {
 #nav_full_content{
     margin-top : 20px;
     overflow-y: auto;
+    height : 1080px;
+}
+#nav_full_content::-webkit-scrollbar{
+    width : 10px;
+}
+
+#nav_full_content::-webkit-scrollbar-thumb{
+    width: 10px;
+    background-color: darkgrey;
+    border-radius:20%;
+}
+
+#nav_full_content::-webkit-scrollbar-track{
+    width:10px;
+    background-color : #00000000;
 }
 
 .nav_full_menu{
@@ -247,9 +263,27 @@ header {
     border-radius:50%;
 }
 
+
+.nav_full_footer_menus{
+    margin : 16px 20px 0px;
+}
+
+.nav_full_footer_button{
+    background-color: #00000000;
+    border : none; 
+}
+
+.footer_text{
+    font-size : 10px;
+    color : #5f5e5e;
+    cursor:pointer;
+}
+
+
+
 /* 메인 내용 */
 
-main {  
+#main_content {  
     position:relative;
     top:70px;
     margin-left:75px;

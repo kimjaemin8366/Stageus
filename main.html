@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="main.css">
     <title>BASEBALL</title>
 </head>
 <body>
@@ -18,22 +19,22 @@
         <input type="button" value="1" onclick="put(this.value)">
             
         </input>
-        <input type="button" value="2" onclick="put(this.value)">
+        <input type="button" value="2"  onclick="put(this.value)">
             
         </input>
-        <input type="button" value="3" onclick="put(this.value)">
+        <input type="button" value="3"  onclick="put(this.value)">
             
         </input>
-        <input type="button" value="4" onclick="put(this.value)">
+        <input type="button" value="4"  onclick="put(this.value)">
             
         </input>
-        <input type="button" value="5" onclick="put(this.value)">
+        <input type="button" value="5"  onclick="put(this.value)">
             
         </input>
-        <input type="button" value="6" onclick="put(this.value)">
+        <input type="button" value="6"  onclick="put(this.value)">
             
         </input>
-        <input type="button" value="7" onclick="put(this.value)">
+        <input type="button" value="7"  onclick="put(this.value)">
             
         </input>
         <input type="button" value="8" onclick="put(this.value)">
@@ -42,10 +43,28 @@
         <input type="button" value="9" onclick="put(this.value)">
             
         </input>
+
+        <div id="number_rooms">
+            <div id="number_room_0" class="number_room" onclick="room_clicked(this.id)">
+                <p id="number0"></p>
+            </div>
+            <div id ="number_room_1" class="number_room" onclick="room_clicked(this.id)">
+                <p id="number1"></p>
+            </div>
+            <div id="number_room_2" class="number_room" onclick="room_clicked(this.id)">
+                <p id="number2"></p>
+            </div>
+        </div>
+
+        <input type="button" value="결과 확인" onclick="ball_count()">
+        <input type="button" value="새 게임" onclick="new_game()">
+        <input type="button" value="지우기" onclick="erase()">
+        <div>
+            <p id="now_ball_count"></p>
+        </div>
     </main>
 
     <script src="baseball.js">
-
     </script>
 </body>
 </html>
